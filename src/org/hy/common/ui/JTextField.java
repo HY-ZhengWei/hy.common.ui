@@ -403,8 +403,6 @@ public class JTextField extends javax.swing.JTextField
 	class MyEventListener implements KeyListener ,DocumentListener
 	{
 
-		private static final long serialVersionUID = 2457607645976812842L;
-		
 		private org.hy.common.ui.JTextField jText;
 
 		

@@ -19,8 +19,6 @@ import org.hy.common.Help;
 public class ImageIcon 
 {
 	
-	private static final long serialVersionUID = -1343365726586841290L;
-
 	private String imagePath;
 	
 	private int    width;

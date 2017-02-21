@@ -19,7 +19,7 @@ import javax.swing.ComboBoxModel;
  * @author   ZhengWei(HY)
  * @version  V1.0  2012-11-20
  */
-public class JComboBox extends javax.swing.JComboBox implements JCOnClick
+public class JComboBox extends javax.swing.JComboBox<Object> implements JCOnClick
 {
 	
 	private static final long serialVersionUID = -7279380869567339056L;
@@ -46,7 +46,7 @@ public class JComboBox extends javax.swing.JComboBox implements JCOnClick
 	
 	
 	
-	public JComboBox(ComboBoxModel aModel) 
+	public JComboBox(ComboBoxModel<Object> aModel) 
 	{
         super(aModel);
         this.isAllowOnClickTransaction = true;
@@ -61,7 +61,7 @@ public class JComboBox extends javax.swing.JComboBox implements JCOnClick
     }
 	
 	
-	public JComboBox(Vector<?> items) 
+	public JComboBox(Vector<Object> items) 
 	{
 		super(items);
 		this.isAllowOnClickTransaction = true;

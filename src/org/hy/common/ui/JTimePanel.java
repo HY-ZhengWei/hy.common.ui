@@ -178,11 +178,11 @@ public final class JTimePanel extends JPanel
 	 */
 	private void notifyListeners(TimeChangeEvent i_Event)
 	{
-		Iterator v_Iter = this.listeners.iterator();
+		Iterator<TimeChangeListener> v_Iter = this.listeners.iterator();
 
 		while ( v_Iter.hasNext() ) 
 		{
-			TimeChangeListener v_Listener = (TimeChangeListener)v_Iter.next();
+			TimeChangeListener v_Listener = v_Iter.next();
 
 			v_Listener.onChangeListener(i_Event);
 		}

@@ -48,7 +48,7 @@ public class DefaultTableModel extends javax.swing.table.DefaultTableModel
 	
 	
 	
-	public DefaultTableModel(Vector columnNames, int rowCount)
+	public DefaultTableModel(Vector<String> columnNames, int rowCount)
 	{
 		super(columnNames ,rowCount);
 	}
@@ -62,7 +62,7 @@ public class DefaultTableModel extends javax.swing.table.DefaultTableModel
 	
 	
 	
-	public DefaultTableModel(Vector data, Vector columnNames)
+	public DefaultTableModel(Vector<?> data, Vector<String> columnNames)
 	{
 		super(data ,columnNames);
 	}

@@ -88,7 +88,7 @@ public final class JDatePanel extends JPanel
 	private JPanel                          jpTop;
 	
 	/** 月份控件 */
-	private JComboBox                       jcMonth;
+	private JComboBox<?>                    jcMonth;
 	
 	/** 年份控件 */
 	private JSpinner                        jsYear;
@@ -282,11 +282,11 @@ public final class JDatePanel extends JPanel
 	 */
 	private void notifyListeners(DateChangeEvent i_Event)
 	{
-		Iterator v_Iter = this.listeners.iterator();
+		Iterator<DateChangeListener> v_Iter = this.listeners.iterator();
 
 		while ( v_Iter.hasNext() ) 
 		{
-			DateChangeListener v_Listener = (DateChangeListener)v_Iter.next();
+			DateChangeListener v_Listener = v_Iter.next();
 
 			v_Listener.onChangeListener(i_Event);
 		}
@@ -301,11 +301,11 @@ public final class JDatePanel extends JPanel
 	 */
 	private void notifyDoubleClickListeners(DateChangeEvent i_Event)
 	{
-		Iterator v_Iter = this.listeners.iterator();
+		Iterator<DateChangeListener> v_Iter = this.listeners.iterator();
 
 		while ( v_Iter.hasNext() ) 
 		{
-			DateChangeListener v_Listener = (DateChangeListener)v_Iter.next();
+			DateChangeListener v_Listener = v_Iter.next();
 
 			v_Listener.doubleClickListener(i_Event);
 		}
@@ -319,7 +319,7 @@ public final class JDatePanel extends JPanel
 	private void init()
 	{
 		this.jpTop        = new JPanel();
-		this.jcMonth      = new JComboBox(GetMonth());
+		this.jcMonth      = new JComboBox<Object>(GetMonth());
 		this.jsYear       = new JSpinner();
 		this.jsPaneDay    = new JScrollPane();
 		this.jtDay        = new JTable();
