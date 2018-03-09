@@ -1,5 +1,5 @@
 Manifest-Version: 1.0.1
 Created-By: HY.ZhengWei@qq.com  2012
-Specification-Version: 1.0.1  2018-03-05
+Specification-Version: 1.0.1  2018-03-09
 SourceCode: https://github.com/HY-ZhengWei/hy.common.ui
 Build-JDK: 1.6
