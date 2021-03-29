@@ -32,10 +32,10 @@
     </dependency>
     
     <!-- https://github.com/HY-ZhengWei/hy.common.base -->
-	<dependency>
-	    <groupId>org</groupId>
-	    <artifactId>hy.common.base</artifactId>
-	    <version>1.0.142</version>
-	</dependency>
+    <dependency>
+        <groupId>org</groupId>
+        <artifactId>hy.common.base</artifactId>
+        <version>1.0.156</version>
+    </dependency>
   </dependencies>
 </project>
