@@ -3,4 +3,4 @@ Created-By: HY.ZhengWei@qq.com  2012
 Specification-Version: 1.0.3  2023-01-11
 SourceCode: https://github.com/HY-ZhengWei/hy.common.ui
 SourceCodeChina: https://gitee.com/HY-ZhengWei/hy.common.ui
-Build-JDK: 1.8
+Build-JDK: OpenJDK 1.8
