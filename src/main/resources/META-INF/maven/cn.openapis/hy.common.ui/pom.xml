@@ -6,7 +6,7 @@
 
     <groupId>org</groupId>
     <artifactId>hy.common.ui</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <packaging>jar</packaging>
 
     <name>cn.openapis.hy.common.ui</name>
@@ -15,8 +15,8 @@
     <description>cn.openapis.hy.common.ui</description>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -54,14 +54,14 @@
         <dependency>
             <groupId>cn.openapis</groupId>
             <artifactId>hy.common.base</artifactId>
-            <version>1.0.181</version>
+            <version>1.0.182</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>cn.openapis</groupId>
             <artifactId>hy.common.xjava</artifactId>
-            <version>4.4.8</version>
+            <version>4.4.9</version>
             <scope>test</scope>
         </dependency>
 
@@ -118,6 +118,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
                 <configuration>
                     <archive>
                         <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>

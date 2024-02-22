@@ -29,3 +29,5 @@ copy hy.common.ui-sources.jar ..\..\..
 del /Q hy.common.ui-sources.jar
 rd /s/q META-INF
 cd ..\..\..
+
+pause
