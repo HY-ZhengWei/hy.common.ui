@@ -29,7 +29,7 @@ public class JCheckBoxMenuItem extends javax.swing.JCheckBoxMenuItem implements 
 	/** 是否允许有按钮有点击事务的功能。这个属性有类内部决定，不可修改。 */
 	private boolean                   isAllowOnClickTransaction;
 	
-	/** 按钮的事务接口对象。这个接口对象由具体的使用者来实现。不实现也可以，那就是一个普通的按钮。 
+	/** 按钮的事务接口对象。这个接口对象由具体的使用者来实现。不实现也可以，那就是一个普通的按钮。
 	 *  启用事务功能，就是用 setOnClickTransaction()方法实例化此属性
 	 */
 	private JCOnClickTransaction      onClickTransaction;
@@ -39,6 +39,7 @@ public class JCheckBoxMenuItem extends javax.swing.JCheckBoxMenuItem implements 
 	
 	
 	
+    @Override
     public void addActionListener(ActionListener l)
     {
     	super.addActionListener(l);
@@ -48,19 +49,20 @@ public class JCheckBoxMenuItem extends javax.swing.JCheckBoxMenuItem implements 
     
 	
 	/**
-	 * 按钮的事务接口对象。这个接口对象由具体的使用者来实现。不实现也可以，那就是一个普通的按钮。 
+	 * 按钮的事务接口对象。这个接口对象由具体的使用者来实现。不实现也可以，那就是一个普通的按钮。
 	 *  启用事务功能，就是用 setOnClickTransaction()方法实例化此属性
-	 *  
+	 * 
 	 * @return
 	 */
-	public JCOnClickTransaction getOnClickTransaction() 
+	@Override
+    public JCOnClickTransaction getOnClickTransaction()
 	{
 		return onClickTransaction;
 	}
 	
 	
 	
-	public void setOnClickTransaction(JCOnClickTransaction i_OnClickTransaction) 
+	public void setOnClickTransaction(JCOnClickTransaction i_OnClickTransaction)
 	{
 		if ( this.isAllowOnClickTransaction )
 		{
@@ -72,7 +74,7 @@ public class JCheckBoxMenuItem extends javax.swing.JCheckBoxMenuItem implements 
 					
 					super.addActionListener(this.onClickListener);
 				}
-				else 
+				else
 				{
 					super.removeActionListener(this.onClickListener);
 					super.addActionListener(this.onClickListener);
@@ -102,7 +104,8 @@ public class JCheckBoxMenuItem extends javax.swing.JCheckBoxMenuItem implements 
 	 * 
 	 * @return
 	 */
-	public boolean isAllowOnClickTransaction()
+	@Override
+    public boolean isAllowOnClickTransaction()
 	{
 		return this.isAllowOnClickTransaction;
 	}
@@ -128,7 +131,7 @@ public class JCheckBoxMenuItem extends javax.swing.JCheckBoxMenuItem implements 
 	 */
 	public void setCtrlKey(String i_Key)
 	{
-		super.setAccelerator(KeyStroke.getKeyStroke(i_Key.charAt(0) ,KeyEvent.CTRL_MASK ,false));
+		super.setAccelerator(KeyStroke.getKeyStroke(i_Key.charAt(0) ,KeyEvent.CTRL_DOWN_MASK ,false));
 	}
 	
 	
@@ -140,7 +143,7 @@ public class JCheckBoxMenuItem extends javax.swing.JCheckBoxMenuItem implements 
 	 */
 	public void setShiftKey(String i_Key)
 	{
-		super.setAccelerator(KeyStroke.getKeyStroke(i_Key.charAt(0) ,KeyEvent.SHIFT_MASK ,false));
+		super.setAccelerator(KeyStroke.getKeyStroke(i_Key.charAt(0) ,KeyEvent.SHIFT_DOWN_MASK ,false));
 	}
 	
 	
@@ -152,7 +155,7 @@ public class JCheckBoxMenuItem extends javax.swing.JCheckBoxMenuItem implements 
 	 */
 	public void setAltKey(String i_Key)
 	{
-		super.setAccelerator(KeyStroke.getKeyStroke(i_Key.charAt(0) ,KeyEvent.ALT_MASK ,false));
+		super.setAccelerator(KeyStroke.getKeyStroke(i_Key.charAt(0) ,KeyEvent.ALT_DOWN_MASK ,false));
 	}
 	
 	

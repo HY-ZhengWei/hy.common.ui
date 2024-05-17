@@ -6,33 +6,19 @@
 
     <groupId>org</groupId>
     <artifactId>hy.common.ui</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
 
-    <name>cn.openapis.hy.common.ui</name>
+    <name>org.hy.common.ui</name>
     <!-- https://gitee.com/HY-ZhengWei/hy.common.ui -->
     <url>https://github.com/HY-ZhengWei/hy.common.ui</url>
-    <description>cn.openapis.hy.common.ui</description>
+    <description>org.hy.common.ui</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>maven-public</id>
-            <name>oss sonatype snapshots</name>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
-
-        <repository>
-            <id>maven-public</id>
-            <name>oss sonatype releases</name>
-            <url>https://s01.oss.sonatype.org/content/repositories/releases/</url>
-        </repository>
-    </distributionManagement>
 
     <licenses>
         <license>
@@ -52,16 +38,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>cn.openapis</groupId>
+            <groupId>org</groupId>
             <artifactId>hy.common.base</artifactId>
-            <version>1.0.182</version>
+            <version>1.0.184</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>cn.openapis</groupId>
+            <groupId>org</groupId>
             <artifactId>hy.common.xjava</artifactId>
-            <version>4.4.9</version>
+            <version>4.5.5</version>
             <scope>test</scope>
         </dependency>
 
@@ -72,13 +58,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <scm>
-        <tag>master</tag>
-        <url>git@github.com:HY-ZhengWei/hy.common.ui.git</url>
-        <connection>git@github.com:HY-ZhengWei/hy.common.ui.git</connection>
-        <developerConnection>git@github.com:HY-ZhengWei/hy.common.ui.git</developerConnection>
-    </scm>
 
     <build>
         <resources>
