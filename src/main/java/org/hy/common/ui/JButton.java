@@ -21,44 +21,44 @@ import javax.swing.Icon;
 public class JButton extends javax.swing.JButton implements JCOnClick
 {
 
-	private static final long serialVersionUID = -8257259180684346032L;
-	
-	
-	/** 是否允许有按钮有点击事务的功能。这个属性有类内部决定，不可修改。 */
-	private boolean                   isAllowOnClickTransaction;
-	
-	/** 按钮的事务接口对象。这个接口对象由具体的使用者来实现。不实现也可以，那就是一个普通的按钮。 
-	 *  启用事务功能，就是用 setOnClickTransaction()方法实例化此属性
-	 */
-	private JCOnClickTransaction      onClickTransaction;
-	
-	/** 如果按钮启用了事务功能，就自己启用这个点击事件。 */
-	private JCOnClickListener         onClickListener;
-	
-	
-	
-	public JButton() 
-	{
-		this(null, null);
-	}
-	
-	    
+    private static final long serialVersionUID = -8257259180684346032L;
+    
+    
+    /** 是否允许有按钮有点击事务的功能。这个属性有类内部决定，不可修改。 */
+    private boolean                   isAllowOnClickTransaction;
+    
+    /** 按钮的事务接口对象。这个接口对象由具体的使用者来实现。不实现也可以，那就是一个普通的按钮。
+     *  启用事务功能，就是用 setOnClickTransaction()方法实例化此属性
+     */
+    private JCOnClickTransaction      onClickTransaction;
+    
+    /** 如果按钮启用了事务功能，就自己启用这个点击事件。 */
+    private JCOnClickListener         onClickListener;
+    
+    
+    
+    public JButton()
+    {
+        this(null, null);
+    }
+    
+        
 
-	public JButton(Icon icon) 
-	{
-		this(null, icon);
-	}
-	
-	    
+    public JButton(Icon icon)
+    {
+        this(null, icon);
+    }
+    
+        
 
-	public JButton(String text) 
+    public JButton(String text)
     {
         this(text, null);
     }
-	
-	    
+    
+        
 
-    public JButton(Action a) 
+    public JButton(Action a)
     {
         super(a);
         this.isAllowOnClickTransaction = false;
@@ -66,7 +66,7 @@ public class JButton extends javax.swing.JButton implements JCOnClick
     
 
 
-    public JButton(String text, Icon icon) 
+    public JButton(String text, Icon icon)
     {
         super(text ,icon);
         this.isAllowOnClickTransaction = true;
@@ -74,61 +74,64 @@ public class JButton extends javax.swing.JButton implements JCOnClick
     
     
     
+    @Override
     public void addActionListener(ActionListener l)
     {
-    	super.addActionListener(l);
-    	this.isAllowOnClickTransaction = false;
+        super.addActionListener(l);
+        this.isAllowOnClickTransaction = false;
     }
     
     
-	
-	public JCOnClickTransaction getOnClickTransaction() 
-	{
-		return onClickTransaction;
-	}
-	
+    
+    @Override
+    public JCOnClickTransaction getOnClickTransaction()
+    {
+        return onClickTransaction;
+    }
+    
 
-	
-	public void setOnClickTransaction(JCOnClickTransaction i_OnClickTransaction) 
-	{
-		if ( this.isAllowOnClickTransaction )
-		{
-			if ( this.onClickTransaction == null && i_OnClickTransaction != null )
-			{
-				if ( this.onClickListener == null )
-				{
-					this.onClickListener = new JCOnClickListener(this);
-					
-					super.addActionListener(this.onClickListener);
-				}
-				else 
-				{
-					super.removeActionListener(this.onClickListener);
-					super.addActionListener(this.onClickListener);
-				}
-			}
-			else if ( this.onClickTransaction != null && i_OnClickTransaction == null )
-			{
-				if ( this.onClickListener != null )
-				{
-					super.removeActionListener(this.onClickListener);
-					this.onClickListener = null;
-				}
-			}
-			
-			this.onClickTransaction = i_OnClickTransaction;
-		}
-		else
-		{
-			this.onClickTransaction = null;
-		}
-	}
-	
+    
+    public void setOnClickTransaction(JCOnClickTransaction i_OnClickTransaction)
+    {
+        if ( this.isAllowOnClickTransaction )
+        {
+            if ( this.onClickTransaction == null && i_OnClickTransaction != null )
+            {
+                if ( this.onClickListener == null )
+                {
+                    this.onClickListener = new JCOnClickListener(this);
+                    
+                    super.addActionListener(this.onClickListener);
+                }
+                else
+                {
+                    super.removeActionListener(this.onClickListener);
+                    super.addActionListener(this.onClickListener);
+                }
+            }
+            else if ( this.onClickTransaction != null && i_OnClickTransaction == null )
+            {
+                if ( this.onClickListener != null )
+                {
+                    super.removeActionListener(this.onClickListener);
+                    this.onClickListener = null;
+                }
+            }
+            
+            this.onClickTransaction = i_OnClickTransaction;
+        }
+        else
+        {
+            this.onClickTransaction = null;
+        }
+    }
+    
 
 
-	public boolean isAllowOnClickTransaction()
-	{
-		return this.isAllowOnClickTransaction;
-	}
-	
+    @Override
+    public boolean isAllowOnClickTransaction()
+    {
+        return this.isAllowOnClickTransaction;
+    }
+    
 }

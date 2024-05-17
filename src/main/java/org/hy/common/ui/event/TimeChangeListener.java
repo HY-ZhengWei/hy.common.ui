@@ -12,14 +12,14 @@ import java.util.EventListener;
  * @author   ZhengWei(HY)
  * @version  V1.0  2012-04-01
  */
-public interface TimeChangeListener extends EventListener 
+public interface TimeChangeListener extends EventListener
 {
-	
-	/**
-	 * 时刻改变之后，触发触发器
-	 * 
-	 * @param e
-	 */
-	public void onChangeListener(TimeChangeEvent e);
-	
+    
+    /**
+     * 时刻改变之后，触发触发器
+     * 
+     * @param e
+     */
+    public void onChangeListener(TimeChangeEvent e);
+    
 }

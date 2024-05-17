@@ -13,17 +13,17 @@ import java.awt.Component;
  * @author   ZhengWei(HY)
  * @version  V1.0  2013-04-22
  */
-public class JToolBar extends javax.swing.JToolBar 
+public class JToolBar extends javax.swing.JToolBar
 {
 
-	private static final long serialVersionUID = -8531222771153906942L;
+    private static final long serialVersionUID = -8531222771153906942L;
 
-	
-	
-	public Component addComponent(Component io_Component) 
-	{
+    
+    
+    public Component addComponent(Component io_Component)
+    {
         super.addImpl(io_Component, null, -1);
         return io_Component;
     }
-	
+    
 }

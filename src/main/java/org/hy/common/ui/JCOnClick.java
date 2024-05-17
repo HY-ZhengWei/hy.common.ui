@@ -16,24 +16,24 @@ package org.hy.common.ui;
  * @author   ZhengWei(HY)
  * @version  V1.0  2013-04-28
  */
-public interface JCOnClick 
+public interface JCOnClick
 {
-	
-	/**
-	 * 是否允许有按钮有点击事务的功能。这个属性有类内部决定，不可修改。
-	 * 
-	 * @return
-	 */
-	public boolean isAllowOnClickTransaction();
-	
-	
-	
-	/**
-	 * 按钮的事务接口对象。这个接口对象由具体的使用者来实现。不实现也可以，那就是一个普通的按钮。 
-	 *  启用事务功能，就是用 setOnClickTransaction()方法实例化此属性
-	 *  
-	 * @return
-	 */
-	public JCOnClickTransaction getOnClickTransaction();
-	
+    
+    /**
+     * 是否允许有按钮有点击事务的功能。这个属性有类内部决定，不可修改。
+     * 
+     * @return
+     */
+    public boolean isAllowOnClickTransaction();
+    
+    
+    
+    /**
+     * 按钮的事务接口对象。这个接口对象由具体的使用者来实现。不实现也可以，那就是一个普通的按钮。
+     *  启用事务功能，就是用 setOnClickTransaction()方法实例化此属性
+     * 
+     * @return
+     */
+    public JCOnClickTransaction getOnClickTransaction();
+    
 }

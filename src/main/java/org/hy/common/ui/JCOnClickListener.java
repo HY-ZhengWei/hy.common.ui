@@ -19,83 +19,85 @@ import java.awt.event.ActionListener;
  */
 public class JCOnClickListener implements ActionListener
 {
-	private JCOnClick jcOnClick;
-	
-	
-	
-	public JCOnClickListener(JCOnClick i_JCOnClick)
-	{
-		this.jcOnClick = i_JCOnClick;
-	}
-	
-	
-	public void actionPerformed(ActionEvent e) 
-	{
-		if ( this.jcOnClick != null
-		  && this.jcOnClick.isAllowOnClickTransaction()
-		  && this.jcOnClick.getOnClickTransaction() != null )
-		{
-			try
-			{
-				this.jcOnClick.getOnClickTransaction().transactionBefore(e);
-			}
-			catch (Exception exce)
-			{
-				// Nothing.
-			}
-			
-			
-			try
-			{
-				Thread v_TD = new Thread(new JCOnClickTD(this.jcOnClick.getOnClickTransaction() ,e));
-				
-				v_TD.start();
-			}
-			catch (Exception exce)
-			{
-				// Nothing.
-			}
-		}
-	}
-	
-	
-	
-	class JCOnClickTD implements Runnable
-	{
-		private JCOnClickTransaction      onClickTrans;
-		
-		private ActionEvent               actionEvent;
-		
-		
-		
-		public JCOnClickTD(JCOnClickTransaction i_OnClickTrans ,ActionEvent i_ActionEvent)
-		{
-			this.onClickTrans = i_OnClickTrans;
-			this.actionEvent  = i_ActionEvent;
-		}
+    private JCOnClick jcOnClick;
+    
+    
+    
+    public JCOnClickListener(JCOnClick i_JCOnClick)
+    {
+        this.jcOnClick = i_JCOnClick;
+    }
+    
+    
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        if ( this.jcOnClick != null
+          && this.jcOnClick.isAllowOnClickTransaction()
+          && this.jcOnClick.getOnClickTransaction() != null )
+        {
+            try
+            {
+                this.jcOnClick.getOnClickTransaction().transactionBefore(e);
+            }
+            catch (Exception exce)
+            {
+                // Nothing.
+            }
+            
+            
+            try
+            {
+                Thread v_TD = new Thread(new JCOnClickTD(this.jcOnClick.getOnClickTransaction() ,e));
+                
+                v_TD.start();
+            }
+            catch (Exception exce)
+            {
+                // Nothing.
+            }
+        }
+    }
+    
+    
+    
+    class JCOnClickTD implements Runnable
+    {
+        private JCOnClickTransaction      onClickTrans;
+        
+        private ActionEvent               actionEvent;
+        
+        
+        
+        public JCOnClickTD(JCOnClickTransaction i_OnClickTrans ,ActionEvent i_ActionEvent)
+        {
+            this.onClickTrans = i_OnClickTrans;
+            this.actionEvent  = i_ActionEvent;
+        }
 
-		
-		public void run() 
-		{
-			try
-			{
-				this.onClickTrans.onClick(this.actionEvent);
-			}
-			catch (Exception exce)
-			{
-				// Nothing.
-			}
-			
-			try
-			{
-				this.onClickTrans.transactionAfter(this.actionEvent);
-			}
-			catch (Exception exce)
-			{
-				// Nothing.
-			}
-		}
-		
-	}
-	
+        
+        @Override
+        public void run()
+        {
+            try
+            {
+                this.onClickTrans.onClick(this.actionEvent);
+            }
+            catch (Exception exce)
+            {
+                // Nothing.
+            }
+            
+            try
+            {
+                this.onClickTrans.transactionAfter(this.actionEvent);
+            }
+            catch (Exception exce)
+            {
+                // Nothing.
+            }
+        }
+        
+    }
+    
 }

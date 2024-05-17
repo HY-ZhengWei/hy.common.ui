@@ -14,20 +14,20 @@ package org.hy.common.ui;
 public class JMenuBar extends javax.swing.JMenuBar
 {
 
-	private static final long serialVersionUID = -8683938860942892700L;
+    private static final long serialVersionUID = -8683938860942892700L;
 
-	
-	
-	/**
-	 * 添加菜单大类
-	 * 
-	 * @param io_JMenu
-	 * @return
-	 */
-	public JMenu addMenu(JMenu io_JMenu)
-	{
-		super.add(io_JMenu);
-		return io_JMenu;
-	}
-	
+    
+    
+    /**
+     * 添加菜单大类
+     * 
+     * @param io_JMenu
+     * @return
+     */
+    public JMenu addMenu(JMenu io_JMenu)
+    {
+        super.add(io_JMenu);
+        return io_JMenu;
+    }
+    
 }

@@ -16,28 +16,28 @@ import java.awt.event.ActionEvent;
  */
 public interface JCOnClickTransaction
 {
-	
-	/**
-	 * 事务之前
-	 * 
-	 * @param e
-	 */
-	public void transactionBefore(ActionEvent e); 
+    
+    /**
+     * 事务之前
+     * 
+     * @param e
+     */
+    public void transactionBefore(ActionEvent e);
 
-	
-	/**
-	 * 点击按钮的事务
-	 * 
-	 * @param e
-	 */
-	public void onClick(ActionEvent e);
-	
-	
-	/**
-	 * 事务之后
-	 * 
-	 * @param e
-	 */
-	public void transactionAfter(ActionEvent e);
-	
+    
+    /**
+     * 点击按钮的事务
+     * 
+     * @param e
+     */
+    public void onClick(ActionEvent e);
+    
+    
+    /**
+     * 事务之后
+     * 
+     * @param e
+     */
+    public void transactionAfter(ActionEvent e);
+    
 }
